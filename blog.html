@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Blog</title>
+</head>
+
+<body>
+    <section style="padding: 20px 40px 20px 40px; text-align: justify;">
+        <div>
+            <h2>
+                Q1: What is difference between map(), filter(), forEach(), and find()?
+            </h2>
+            <p>
+                <span style="background: greenyellow;">Answer:</span> In JavaScript, map(), filter(), forEach(), and
+                find() are all array methods that allow you to
+                perform operations on arrays in different ways. Here's a brief overview of the differences between them:
+                <br>
+                <br>
+
+                <span style="font-weight: bold;">map():</span> map() is used to transform each element of an array and
+                return a new array with the transformed
+                values. It creates a new array with the same length as the original array, but with each element
+                transformed based on a provided function.
+                <br>
+                <br>
+
+                <span style="font-weight: bold;">filter():</span> filter() is used to create a new array with all
+                elements that pass a provided test. It returns
+                a new array that contains only the elements that meet the condition specified in the provided function.
+                <br>
+                <br>
+
+
+                <span style="font-weight: bold;">forEach():</span> forEach() is used to iterate over an array and
+                perform a specified action on each element. It
+                does not return a new array but instead applies a provided function to each element in the array.
+                <br>
+                <br>
+
+
+                <span style="font-weight: bold;">find():</span> find() is used to return the first element in an array
+                that passes a provided test. It returns
+                the value of the first element in the array that satisfies the provided function.
+                <br>
+                <br>
+
+
+                In summary, map() and filter() both return new arrays, forEach() does not return anything, and find()
+                returns a single element. Each of these methods can be useful depending on the task you're trying to
+                accomplish with an array in JavaScript.
+
+            </p>
+            <h2>
+                Q2: What is difference between localStorage, sessionStorage and cookies?
+
+            </h2>
+            <p>
+                <span style="background: greenyellow;">Answer:</span> localStorage, sessionStorage, and cookies are all
+                ways to store data on the client-side (i.e., in the user's browser), but they have some differences in
+                terms of scope, capacity, and expiration.
+                <br>
+                <br>
+
+                <span style="font-weight: bold;">localStorage:</span> localStorage is a web storage API that allows you
+                to store key-value pairs in the browser's local storage. The data stored in localStorage persists even
+                after the user closes the browser window or restarts their device, and it is available to any JavaScript
+                code running on the same origin (i.e., domain name, protocol, and port number). localStorage has a
+                larger capacity than cookies (usually up to 5-10 MB), and the data is not sent to the server with every
+                HTTP request.
+                <br>
+                <br>
+                <span style="font-weight: bold;">sessionStorage:</span> sessionStorage is similar to localStorage, but
+                it only stores data for the duration of the browser session. Once the user closes the browser window or
+                tab, the data is deleted. Like localStorage, sessionStorage is available to any JavaScript code running
+                on the same origin.
+                <br>
+                <br>
+                <span style="font-weight: bold;">Cookies:</span> Cookies are small text files that are stored on the
+                client-side by a web server. Cookies have a name, a value, and optional attributes such as an expiration
+                date, a domain, and a path. Cookies are sent to the server with every HTTP request, so they can be used
+                to persist data across multiple pages or even across different websites. However, cookies have a smaller
+                capacity than localStorage or sessionStorage (usually up to 4 KB per cookie), and they are vulnerable to
+                security risks such as cross-site scripting and cross-site request forgery.
+
+            </p>
+            <h2>
+                Q3: What is event loop and how does it work?
+
+            </h2>
+            <p>
+                <span style="background: greenyellow;">Answer:</span> The event loop is a key concept in JavaScript that
+                allows it to be non-blocking and performant. It's a mechanism for handling asynchronous code and
+                managing the execution of code in the call stack.
+                <br>
+                <br>
+
+                Here's how the event loop works:
+                <br>
+                <br>
+
+                JavaScript is single-threaded, which means that it can only execute one task at a time. When a
+                JavaScript program is executed, it starts with an initial call to a function, which is added to the call
+                stack.
+                <br>
+                <br>
+                As the function executes, it can invoke other functions, which are added to the call stack in a
+                first-in, last-out order. Each function must complete its execution before the next function in the
+                stack can be executed.
+                <br>
+                <br>
+                If a function needs to perform an asynchronous operation, such as waiting for a network request or a
+                timer to complete, it can delegate that task to a browser API, which will handle it in the background.
+                <br>
+                <br>
+                When the asynchronous operation is complete, the browser API places a corresponding event on the event
+                queue.
+                <br>
+                <br>
+                The event loop continuously monitors the call stack and the event queue. If the call stack is empty, the
+                event loop will take the first event from the event queue and push it onto the call stack, which will
+                execute the corresponding callback function.
+                <br>
+                <br>
+                The callback function can then invoke other functions and add them to the call stack, and the cycle
+                continues.
+                <br>
+                <br>
+                This mechanism allows JavaScript to handle asynchronous code without blocking the main thread, which can
+                make web applications feel more responsive and performant. However, it's important to understand how the
+                event loop works to avoid potential pitfalls such as blocking the call stack with long-running
+                operations or creating infinite loops in event handlers.
+
+            </p>
+        </div>
+        <hr style="width: 5; border-top: 2px solid black; width: 75%;">
+        <div>
+            <h1>About quizeTimer & chooseQuiz Function:</h1>
+            <p> <span style="font-weight: bold;">quizeTimer:</span> এখানে quizeTimer দিয়ে কুইজের টাইম সেট করা হয়েছে।
+                quizeTimer এর ভিতরে clearInterval নামে অন্য একটি ফাংশনকে কল করা হয়েছে, যেটা দিয়ে কুইজের সময় ৬০ সেকেন্ডের
+                বেশি হলে red-700 & red-300 কালার দেখাবে।
+
+            </p>
+            <p> <span style="font-weight: bold;">chooseQuiz:</span> chooseQuiz এই ফাংশন দিয়ে choosen answer এই পার্টটার
+                কাজ করা হয়েছে, কুইজের কোন টাকে সিলেক্ট করা হচ্ছে সেটা মার্ক হয়ে থাকতেছে।</p>
+        </div>
+    </section>
+
+</body>
+
+</html>
